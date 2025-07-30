@@ -357,17 +357,3 @@ const LockCodeCracker = () => {
 };
 
 export default LockCodeCracker;
-// Zod Schema
-export const Schema = {
-  commentary: "",
-  template: "nextjs-developer",
-  title: "Lock Code Cracker",
-  description:
-    "This is a code cracking game where players guess a 4-digit lock code in the fewest attempts possible.",
-  additional_dependencies: ["framer-motion"],
-  has_additional_dependencies: true,
-  install_dependencies_command: "npm install framer-motion",
-  port: 3000,
-  file_path: "pages/index.tsx",
-  code: "<see code above>",
-};
