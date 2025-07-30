@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
 import { AlignJustify, Moon, Sun } from "lucide-react";
-import { div } from "framer-motion/client";
 
 const LockCodeCracker = () => {
   const [isDarkMode, setDarkMode] = useState<boolean>(true);
@@ -21,9 +20,11 @@ const LockCodeCracker = () => {
   >([]);
   const [error, setError] = useState<string>("");
   const [finished, setFinised] = useState<boolean>(false);
-  const inputRefs = Array.from({ length: 4 }, () =>
-    useRef<HTMLInputElement>(null)
-  );
+  const inputRef0 = useRef<HTMLInputElement>(null);
+  const inputRef1 = useRef<HTMLInputElement>(null);
+  const inputRef2 = useRef<HTMLInputElement>(null);
+  const inputRef3 = useRef<HTMLInputElement>(null);
+  const inputRefs = [inputRef0, inputRef1, inputRef2, inputRef3];
 
   const toggleTheme = () => {
     setDarkMode((prev) => !prev);
@@ -119,7 +120,7 @@ const LockCodeCracker = () => {
       className={`min-h-screen w-full bg-gradient-to-br ${
         isDarkMode
           ? "from-indigo-900 via-purple-900 to-violet-800 text-white"
-          : "from-indigo-100 via-puple-100 to-violet-200 text-indigo-800"
+          : "from-indigo-100 via-purple-100 to-violet-200 text-indigo-800"
       } flex flex-col items-center font-[Merriweather]`}
     >
       <ToastContainer />
